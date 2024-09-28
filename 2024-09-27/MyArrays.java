@@ -1,17 +1,17 @@
 public static void main(String[] args){
-    int[] toTest;
-	toTest = [];
-    System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
-	toTest = ["Hello"];
-	System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
-	toTest = ["Hello", "World"];
-	System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
-	toTest = ["1", "2", "3"];
-	System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
-	toTest = ["1", "Hello", "World"];
-	System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
-	toTest = ["\n", "\\"];
-	System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
+    int[] testReturnCopy;
+	testReturnCopy = [];
+    System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = ["Hello"];
+	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = ["Hello", "World"];
+	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = ["1", "2", "3"];
+	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = ["1", "Hello", "World"];
+	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = ["\n", "\\"];
+	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
 }
 
 public static String arrayToString(int[] nums){
