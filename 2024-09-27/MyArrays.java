@@ -49,3 +49,11 @@ public static String[] arrayToString(int[] nums){
     result += "]";
     return result;
 }
+
+public static int[] returnCopy(int[] ary){
+	int[] toReturn = new int[ary.length];
+	for (int count = 0; count < ary.length; count++){
+		toReturn[count] = ary[count];
+	}
+	return toReturn;
+}
