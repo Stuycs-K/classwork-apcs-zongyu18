@@ -2,17 +2,21 @@ public static void main(String[] args){
     int[] testReturnCopy;
 	int[] testConcatArrayA;
 	int[] testConcatArrayB;
-	testReturnCopy = [];
+	testReturnCopy = {};
     System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
-	testReturnCopy = [1];
+	testReturnCopy = new int[0];
+    System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = new int[3];
+    System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
+	testReturnCopy = {1};
 	System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
-	testReturnCopy = [0, 1];
+	testReturnCopy = {0, 1};
 	System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
-	testReturnCopy = [1, 0];
+	testReturnCopy = {1, 0};
 	System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
-	testReturnCopy = [1, 2, 3];
+	testReturnCopy = {1, 2, 3};
 	System.out.println("Expected arrays matching but not the same true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
-	testConcatArray = 
+	testConcatArrayA = 
 }
 
 public static String[] arrayToString(int[] nums){
