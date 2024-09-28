@@ -9,7 +9,7 @@ public static void main(String[] args){
 	testReturnCopy = [1, 0];
 	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
 	testReturnCopy = [1, 2, 3];
-	System.out.println("Expected true and function returned " + (toTest != returnCopy(toTest) && arrayToString(toTest).equals(arrayToString(returnCopy(toTest)))));
+	System.out.println("Expected true and function returned " + (testReturnCopy != returnCopy(testReturnCopy) && arrayToString(testReturnCopy).equals(arrayToString(returnCopy(testReturnCopy)))));
 }
 
 public static String[] arrayToString(int[] nums){
