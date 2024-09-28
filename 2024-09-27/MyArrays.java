@@ -57,3 +57,14 @@ public static int[] returnCopy(int[] ary){
 	}
 	return toReturn;
 }
+
+public static int[] returnCopy(int[]ary1, int[]ary2){
+	int[] toReturn = new int[ary1.length + ary2.length];
+	for (int count = 0; count < ary1.length; count++){
+		toReturn[count] = ary1[count];
+	}
+	for (int count = 0; count < ary2.length; count++){
+		toReturn[count + ary1.length] = ary2[count];
+	}
+	return toReturn;
+}
