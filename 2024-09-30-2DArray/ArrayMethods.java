@@ -72,6 +72,13 @@ public class ArrayMethods {
 	System.out.println("Expected 10 and arr2DSum returned " + arr2DSum(arr4) + "; expected matches returned is " + 10 == arr2DSum(arr4));
     int[][] rectangularArr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     int[][] expectedArr = {{1, 4, 7}, {2, 5, 8}, {3, 8, 9}};
-    System.out.println("Expected " + arrToString(expectedArr) + " Returned " + arrToString(swapRC(rectangularArr)));
+	int[][] expectedArr2 = {{10, 40}, {20, 50}, {30, 60}};
+	int[][] expectedArr3 = {(10, 40, 70), {20, 50, 80}, {30, 60, 90}};
+	int[][] expectedArr4 = {{1, 2, 3, 4}};
+	// tests for swapRC
+	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr).equals(arrToString(swapRC(rectangularArr))));
+	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr2).equals(arrToString(swapRC(arr2))));
+	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr3).equals(arrToString(swapRC(arr3))))
+	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr4).equals(arrToString(swapRC(arr4))))
   }
 }
