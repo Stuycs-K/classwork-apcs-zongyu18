@@ -55,7 +55,15 @@ public class ArrayMethods {
 
   public static void main(String[] args) {
     int[][] arr1 = {{1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10}};
-    System.out.println("Expected true and method returned " + arrToString(arr1).equals("[[1, 2, 3], [4, 5, 6, 7], [8, 9, 10]]"));
+	int[][] arr2 = {{10, 20, 30}, {40, 50, 60}};
+	int[][] arr3 = {{10, 20, 30}, {40, 50, 60}, {70, 80, 90}};
+	int[][] arr4 = {{1, 2, 3, 4}};
+    System.out.println("arrToString test expected true and returned " + arrToString(arr1).equals("[[1, 2, 3], [4, 5, 6, 7], [8, 9, 10]]"));
+	System.out.println("arrToString test expected true and returned " + arrToString(arr2).equals("[[10, 20, 30], [40, 50, 60]]"));
+    System.out.println("arrToString test expected true and returned " + arrToString(arr3).equals("[[10, 20, 30], [40, 50, 60], [70, 80, 90]]"));
+	System.out.println("arrToString test expected true and returned " + arrToString(arr4).equals("[[1, 2, 3, 4]]"));
+
+
     System.out.println("Expected 55 and method returned " + arr2DSum(arr1));
     int[][] rectangularArr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     int[][] expectedArr = {{1, 4, 7}, {2, 5, 8}, {3, 8, 9}};
