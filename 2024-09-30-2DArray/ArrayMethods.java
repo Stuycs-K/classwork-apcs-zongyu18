@@ -54,17 +54,22 @@ public class ArrayMethods {
   }
 
   public static void main(String[] args) {
+	// initializing the arrays
     int[][] arr1 = {{1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10}};
 	int[][] arr2 = {{10, 20, 30}, {40, 50, 60}};
 	int[][] arr3 = {{10, 20, 30}, {40, 50, 60}, {70, 80, 90}};
 	int[][] arr4 = {{1, 2, 3, 4}};
+	// tests for arrToString
     System.out.println("arrToString test expected true and returned " + arrToString(arr1).equals("[[1, 2, 3], [4, 5, 6, 7], [8, 9, 10]]"));
 	System.out.println("arrToString test expected true and returned " + arrToString(arr2).equals("[[10, 20, 30], [40, 50, 60]]"));
     System.out.println("arrToString test expected true and returned " + arrToString(arr3).equals("[[10, 20, 30], [40, 50, 60], [70, 80, 90]]"));
 	System.out.println("arrToString test expected true and returned " + arrToString(arr4).equals("[[1, 2, 3, 4]]"));
 
-
-    System.out.println("Expected 55 and method returned " + arr2DSum(arr1));
+	// tests for arr2DSum
+    System.out.println("Expected 55 and arr2DSum returned " + arr2DSum(arr1) + "; expected matches returned is " + 55 == arr2DSum(arr1));
+	System.out.println("Expected 210 and arr2DSum returned " + arr2DSum(arr2) + "; expected matches returned is " + 210 == arr2DSum(arr2)); 
+	System.out.println("Expected 450 and arr2DSum returned " + arr2DSum(arr3) + "; expected matches returned is " + 450 == arr2DSum(arr3));
+	System.out.println("Expected 10 and arr2DSum returned " + arr2DSum(arr4) + "; expected matches returned is " + 10 == arr2DSum(arr4));
     int[][] rectangularArr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     int[][] expectedArr = {{1, 4, 7}, {2, 5, 8}, {3, 8, 9}};
     System.out.println("Expected " + arrToString(expectedArr) + " Returned " + arrToString(swapRC(rectangularArr)));
