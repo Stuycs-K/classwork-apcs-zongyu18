@@ -50,7 +50,13 @@ public class ArrayMethods {
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] toReturn = new int[nums[0].length][nums.length];
+	for (int count = 0; count < nums.length; count++){
+		for (int innerCount = 0; innerCount < nums[count].length; innerCount++){
+			toReturn[innerCount][count] = nums[count][innerCount];
+		}
+	}
+	return toReturn;
   }
 
   public static void main(String[] args) {
@@ -71,10 +77,10 @@ public class ArrayMethods {
 	System.out.println("Expected 450 and arr2DSum returned " + arr2DSum(arr3) + "; expected matches returned is " + (450 == arr2DSum(arr3)));
 	System.out.println("Expected 10 and arr2DSum returned " + arr2DSum(arr4) + "; expected matches returned is " + (10 == arr2DSum(arr4)));
     int[][] rectangularArr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    int[][] expectedArr = {{1, 4, 7}, {2, 5, 8}, {3, 8, 9}};
+    int[][] expectedArr = {{1, 4, 7}, {2, 5, 8}, {3, 6, 9}};
 	int[][] expectedArr2 = {{10, 40}, {20, 50}, {30, 60}};
 	int[][] expectedArr3 = {{10, 40, 70}, {20, 50, 80}, {30, 60, 90}};
-	int[][] expectedArr4 = {{1, 2, 3, 4}};
+	int[][] expectedArr4 = {{1}, {2}, {3}, {4}};
 	// tests for swapRC
 	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr).equals(arrToString(swapRC(rectangularArr))));
 	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr2).equals(arrToString(swapRC(arr2))));
