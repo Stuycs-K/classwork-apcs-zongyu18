@@ -101,12 +101,14 @@ public class ArrayMethods {
 	System.out.println("arrToString test expected true and returned " + arrToString(arr2).equals("[[10, 20, 30], [40, 50, 60]]"));
     System.out.println("arrToString test expected true and returned " + arrToString(arr3).equals("[[10, 20, 30], [40, 50, 60], [70, 80, 90]]"));
 	System.out.println("arrToString test expected true and returned " + arrToString(arr4).equals("[[1, 2, 3, 4]]"));
+	System.out.println("arrToString test expected true and returned " + arrToString(emptyArr).equals("[[]]"));
 
 	// tests for arr2DSum
     System.out.println("Expected 55 and arr2DSum returned " + arr2DSum(arr1) + "; expected matches returned is " + (55 == arr2DSum(arr1)));
 	System.out.println("Expected 210 and arr2DSum returned " + arr2DSum(arr2) + "; expected matches returned is " + (210 == arr2DSum(arr2))); 
 	System.out.println("Expected 450 and arr2DSum returned " + arr2DSum(arr3) + "; expected matches returned is " + (450 == arr2DSum(arr3)));
 	System.out.println("Expected 10 and arr2DSum returned " + arr2DSum(arr4) + "; expected matches returned is " + (10 == arr2DSum(arr4)));
+	System.out.println("Expected 0 and arr2DSum returned " + arr2DSum(emptyArr) + "; expected matches returned is " + (0 == arr2DSum(emptyArr)));
 
 	
 	// tests for swapRC
@@ -119,6 +121,7 @@ public class ArrayMethods {
 	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr2).equals(arrToString(swapRC(arr2))));
 	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr3).equals(arrToString(swapRC(arr3))));
 	System.out.println("swapRC test expected true and returned " + arrToString(expectedArr4).equals(arrToString(swapRC(arr4))));
+
 	
 	// tests for replaceNegative
 	int[][] arr5 = {{-1, 0, 1}, {-2, -5, -8, 10}, {-4}};
@@ -141,5 +144,9 @@ public class ArrayMethods {
 	System.out.println("Original array is " + arrToString(arr8) + " and expected modified array is " + arrToString(expectedArr8));
 	replaceNegative(arr8);
 	System.out.println("Expected modified array matches modified array is " + arrToString(expectedArr8).equals(arrToString(arr8)));
+	System.out.println("Original array is " + arrToString(emptyArr) + " and expected modified array is " + "[[]]");
+	replaceNegative(emptyArr);
+	System.out.println("Expected modified array matches modified array is " + arrToString(emptyArr).equals("[[]]"));
+
   }
 }
