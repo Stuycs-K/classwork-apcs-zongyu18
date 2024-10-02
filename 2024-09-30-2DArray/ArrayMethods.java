@@ -147,6 +147,14 @@ public class ArrayMethods {
 	System.out.println("Original array is " + arrToString(emptyArr) + " and expected modified array is " + "[[]]");
 	replaceNegative(emptyArr);
 	System.out.println("Expected modified array matches modified array is " + arrToString(emptyArr).equals("[[]]"));
-
+	
+	// tests for copy
+	System.out.println("2D Arrays match but are not the same is " + (arr1 != copy(arr1) && arrToString(arr1).equals(arrToString(copy(arr1)))));
+	System.out.println("2D Arrays match but are not the same is " + (arr2 != copy(arr2) && arrToString(arr2).equals(arrToString(copy(arr2)))));
+	System.out.println("2D Arrays match but are not the same is " + (arr3 != copy(arr3) && arrToString(arr3).equals(arrToString(copy(arr3)))));
+	System.out.println("2D Arrays match but are not the same is " + (arr4 != copy(arr4) && arrToString(arr4).equals(arrToString(copy(arr4)))));
+	System.out.println("2D Arrays match but are not the same is " + (arr5 != copy(arr5) && arrToString(arr5).equals(arrToString(copy(arr5)))));
+	System.out.println("2D Arrays match but are not the same is " + (arr6 != copy(arr6) && arrToString(arr6).equals(arrToString(copy(arr6)))));
+	System.out.println("2D Arrays match but are not the same is " + (emptyArr != copy(emptyArr) && arrToString(emptyArr).equals(arrToString(copy(emptyArr)))));
   }
 }
