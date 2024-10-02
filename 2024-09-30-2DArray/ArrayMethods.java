@@ -162,14 +162,24 @@ public class ArrayMethods {
 	
 	// tests for copy
 	int[][]arrCopy1 = copy(arr1);
+	int[][]arrCopy2 = copy(arr2);
+	int[][]arrCopy3 = copy(arr3);
+	int[][]arrCopy8 = copy(arr8);
+	int[][]emptyArrCopy = copy(emptyArr);
 	System.out.println("2D Arrays match but are not the same is " + (arr1 != copy(arr1) && arrToString(arr1).equals(arrToString(arrCopy1))));
 	arr1[0] = new int[]{10};
 	System.out.println("Modifying original array doesn't affect the copy is " + !arrToString(arr1).equals(arrToString(arrCopy1)));
 	System.out.println("2D Arrays match but are not the same is " + (arr2 != copy(arr2) && arrToString(arr2).equals(arrToString(copy(arr2)))));
+	arr2[0] = new int[]{10};
+	System.out.println("Modifying original array doesn't affect the copy is " + !arrToString(arr2).equals(arrToString(arrCopy2)));
 	System.out.println("2D Arrays match but are not the same is " + (arr3 != copy(arr3) && arrToString(arr3).equals(arrToString(copy(arr3)))));
-	System.out.println("2D Arrays match but are not the same is " + (arr4 != copy(arr4) && arrToString(arr4).equals(arrToString(copy(arr4)))));
-	System.out.println("2D Arrays match but are not the same is " + (arr5 != copy(arr5) && arrToString(arr5).equals(arrToString(copy(arr5)))));
-	System.out.println("2D Arrays match but are not the same is " + (arr6 != copy(arr6) && arrToString(arr6).equals(arrToString(copy(arr6)))));
+	arr3[0] = new int[]{10};
+	System.out.println("Modifying original array doesn't affect the copy is " + !arrToString(arr3).equals(arrToString(arrCopy3)));
+	System.out.println("2D Arrays match but are not the same is " + (arr8 != copy(arr8) && arrToString(arr8).equals(arrToString(copy(arr8)))));
+	arr8[0] = new int[]{10};
+	System.out.println("Modifying original array doesn't affect the copy is " + !arrToString(arr8).equals(arrToString(arrCopy8)));
 	System.out.println("2D Arrays match but are not the same is " + (emptyArr != copy(emptyArr) && arrToString(emptyArr).equals(arrToString(copy(emptyArr)))));
+	emptyArr[0] = new int[]{10};
+	System.out.println("Modifying original array doesn't affect the copy is " + !arrToString(emptyArr).equals(arrToString(emptyArrCopy)));
   }
 }
