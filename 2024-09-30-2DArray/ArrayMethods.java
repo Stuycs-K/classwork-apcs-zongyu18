@@ -84,8 +84,20 @@ public class ArrayMethods {
 	//DO NOT use any built in methods that "copy" an array.
 	//You SHOULD write a helper method for this.
 	//If you don't see a good way to do that, you should stop and look at prior methods.
+	public static int[] copyHelper(int[] ary){
+		int[] toReturn = new int[ary.length];
+		for (int count = 0; count < ary.length; count++){
+			toReturn[count] = ary[count];
+		}
+		return toReturn;
+	}
+	
 	public static int[][] copy(int[][] nums){
-	  return null;//placeholder so it compiles
+		int[][] toReturn = new int[nums.length][];
+		for (int count = 0; count < nums.length; count++){
+			toReturn[count] = copyHelper(nums[count]);
+		}
+		return toReturn;
 	}
 
   public static void main(String[] args) {
@@ -149,7 +161,10 @@ public class ArrayMethods {
 	System.out.println("Expected modified array matches modified array is " + arrToString(emptyArr).equals("[[]]"));
 	
 	// tests for copy
-	System.out.println("2D Arrays match but are not the same is " + (arr1 != copy(arr1) && arrToString(arr1).equals(arrToString(copy(arr1)))));
+	int[][]arrCopy1 = copy(arr1);
+	System.out.println("2D Arrays match but are not the same is " + (arr1 != copy(arr1) && arrToString(arr1).equals(arrToString(arrCopy1))));
+	arr1[0] = new int[]{10};
+	System.out.println("Modifying original array doesn't affect the copy is " + !arrToString(arr1).equals(arrToString(arrCopy1)));
 	System.out.println("2D Arrays match but are not the same is " + (arr2 != copy(arr2) && arrToString(arr2).equals(arrToString(copy(arr2)))));
 	System.out.println("2D Arrays match but are not the same is " + (arr3 != copy(arr3) && arrToString(arr3).equals(arrToString(copy(arr3)))));
 	System.out.println("2D Arrays match but are not the same is " + (arr4 != copy(arr4) && arrToString(arr4).equals(arrToString(copy(arr4)))));
