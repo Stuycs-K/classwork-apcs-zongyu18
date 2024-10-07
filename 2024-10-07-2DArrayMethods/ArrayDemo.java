@@ -18,14 +18,24 @@ public class ArrayDemo{
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
-    return "";
+    String result = "[";
+    for (int i = 0; i < ary.length; i++) {
+      result += ary[i];
+      if (i < ary.length - 1) result += ", ";
+    }
+    return result + "]";
   }
 
   //The name of different methods can be the same,
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
   public static String arrToString(int[][]ary){
-    return "";
+    String result = "[";
+    for (int i = 0; i < ary.length; i++) {
+      result += arrToString(ary[i]);
+      if (i < ary.length - 1) result += ", ";
+    }
+    return result + "]";
   }
 
   //1. Calculate and return how many elements equal zero in the 2D array.
