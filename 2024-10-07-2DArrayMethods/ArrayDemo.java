@@ -5,7 +5,15 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-
+    int testArr1[] = {10, 15, 20};
+    int testArr2[] = {};
+    int testArr3[][] = {{10, 15, 20}, {2, 3, 4}}
+    int testArr4[][] = {{}};
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr1).equals(arrayToString(testArr1)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrayToString(testArr2)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr3).equals(arrayToString(testArr3)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr4).equals(arrayToString(testArr4)));
+ 
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
