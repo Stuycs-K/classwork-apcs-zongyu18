@@ -15,10 +15,10 @@ public class ArrayDemo{
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrToString(testArr2)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr3).equals(arrToString(testArr3)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr4).equals(arrToString(testArr4)));
-	System.out.println("Expected 0 and method returned " + countZeros2D(testArr3) + "; expected matches returned is " + countZeros2D(testArr3) == 0);
-	System.out.println("Expected 0 and method returned " + countZeros2D(testArr4) + "; expected matches returned is " + countZeros2D(testArr4) == 0);
-	System.out.println("Expected 7 and method returned " + countZeros2D(testArr5) + "; expected matches returned is " + countZeros2D(testArr5) == 7);
-	System.out.println("Expected 3 and method returned " + countZeros2D(testArr6) + "; expected matches returned is " + countZeros2D(testArr6) == 3);
+	System.out.println("Expected 0 and method returned " + countZeros2D(testArr3) + "; expected matches returned is " + (countZeros2D(testArr3) == 0));
+	System.out.println("Expected 0 and method returned " + countZeros2D(testArr4) + "; expected matches returned is " + (countZeros2D(testArr4) == 0));
+	System.out.println("Expected 7 and method returned " + countZeros2D(testArr5) + "; expected matches returned is " + (countZeros2D(testArr5) == 7));
+	System.out.println("Expected 3 and method returned " + countZeros2D(testArr6) + "; expected matches returned is " + (countZeros2D(testArr6) == 3));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -48,7 +48,9 @@ public class ArrayDemo{
     int toReturn = 0;
     for (int count = 0; count < nums.length; count++){
         for (int innerCount = 0; innerCount < nums[count].length; innerCount++){
-			
+			if (nums[count][innerCount] == 0){
+				toReturn += 1;
+			}
         }    
     }
 	return toReturn;
