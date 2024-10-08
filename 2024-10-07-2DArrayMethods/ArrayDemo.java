@@ -9,11 +9,16 @@ public class ArrayDemo{
     int testArr2[] = {};
     int testArr3[][] = {{10, 15, 20}, {2, 3, 4}};
     int testArr4[][] = {{}};
+	int testArr5[][] = {{0, 0, 0, 0, 0, 0, 1, 0}};
+	int testArr6[][] = {{0, 1, 2}, {0, 5, 10}, {0, 10, 20}};
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr1).equals(arrToString(testArr1)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrToString(testArr2)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr3).equals(arrToString(testArr3)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr4).equals(arrToString(testArr4)));
- 
+	System.out.println("Expected 0 and method returned " + countZeros2D(testArr3) + "; expected matches returned is " + countZeros2D(testArr3) == 0);
+	System.out.println("Expected 0 and method returned " + countZeros2D(testArr4) + "; expected matches returned is " + countZeros2D(testArr4) == 0);
+	System.out.println("Expected 7 and method returned " + countZeros2D(testArr5) + "; expected matches returned is " + countZeros2D(testArr5) == 7);
+	System.out.println("Expected 3 and method returned " + countZeros2D(testArr6) + "; expected matches returned is " + countZeros2D(testArr6) == 3);
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -43,7 +48,7 @@ public class ArrayDemo{
     int toReturn = 0;
     for (int count = 0; count < nums.length; count++){
         for (int innerCount = 0; innerCount < nums[count].length; innerCount++){
-                
+			
         }    
     }
 	return toReturn;
