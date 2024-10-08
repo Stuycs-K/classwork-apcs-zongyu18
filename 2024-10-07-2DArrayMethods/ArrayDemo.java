@@ -7,12 +7,12 @@ public class ArrayDemo{
     //do not use any other Arrays.method()
     int testArr1[] = {10, 15, 20};
     int testArr2[] = {};
-    int testArr3[][] = {{10, 15, 20}, {2, 3, 4}}
+    int testArr3[][] = {{10, 15, 20}, {2, 3, 4}};
     int testArr4[][] = {{}};
-    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr1).equals(arrayToString(testArr1)));
-    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrayToString(testArr2)));
-    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr3).equals(arrayToString(testArr3)));
-    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr4).equals(arrayToString(testArr4)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr1).equals(arrToString(testArr1)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrToString(testArr2)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr3).equals(arrToString(testArr3)));
+    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr4).equals(arrToString(testArr4)));
  
   }
 
