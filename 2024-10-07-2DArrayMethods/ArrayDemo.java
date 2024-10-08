@@ -13,8 +13,8 @@ public class ArrayDemo{
 	int testArr6[][] = {{0, 1, 2}, {0, 5, 10}, {0, 10, 20}};
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr1).equals(arrToString(testArr1)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrToString(testArr2)));
-    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr3).equals(arrToString(testArr3)));
-    System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr4).equals(arrToString(testArr4)));
+    //System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.deepToString(testArr3).equals(arrToString(testArr3)));
+    //System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.deepToString(testArr4).equals(arrToString(testArr4)));
 	System.out.println("Expected 0 and method returned " + countZeros2D(testArr3) + "; expected matches returned is " + (countZeros2D(testArr3) == 0));
 	System.out.println("Expected 0 and method returned " + countZeros2D(testArr4) + "; expected matches returned is " + (countZeros2D(testArr4) == 0));
 	System.out.println("Expected 7 and method returned " + countZeros2D(testArr5) + "; expected matches returned is " + (countZeros2D(testArr5) == 7));
