@@ -46,6 +46,7 @@ public class ArrayDemo{
                 
         }    
     }
+	return toReturn;
   }
 
   //2. Calculate the sum of a 2d array
@@ -86,6 +87,13 @@ public class ArrayDemo{
   //DO NOT use any built in methods that "copy" an array.
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
+  public static int[] copyHelper(int[] ary){
+		int[] toReturn = new int[ary.length];
+		for (int count = 0; count < ary.length; count++){
+			toReturn[count] = ary[count];
+		}
+		return toReturn;
+  }
   public static int[][] copy(int[][] nums){
     int[][] toReturn = new int[nums.length][];
 		for (int count = 0; count < nums.length; count++){
