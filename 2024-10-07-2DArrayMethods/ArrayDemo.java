@@ -138,10 +138,10 @@ public class ArrayDemo{
     String toReturn = "<table>";
 	for (int count = 0; count < nums.length; count++){
 		toReturn += "<tr>";
-		for (int innerCount = 0; innerCount < nums[count].length){
+		for (int innerCount = 0; innerCount < nums[count].length; innerCount++){
 			toReturn += ("<td>" + nums[count][innerCount] + "</td>");
 		}
-		toReturn += "</tr>"
+		toReturn += "</tr>";
 	}
 	return toReturn + "</table>";
   }
