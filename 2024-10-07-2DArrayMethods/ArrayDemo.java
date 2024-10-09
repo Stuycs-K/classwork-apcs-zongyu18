@@ -13,6 +13,7 @@ public class ArrayDemo{
 	int testArr6[][] = {{0, 1, 2}, {0, 5, 10}, {0, 10, 20}};
 	int htmlTest[][] = {{1, 2}, {3}};
 	int htmlTest2[][] = {{1}, {2}, {3}};
+	int htmlTest3[][] = {{}, {}, {}};
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr1).equals(arrToString(testArr1)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.toString(testArr2).equals(arrToString(testArr2)));
     System.out.println("Expected my arrayToString to return the same value as built-in toString method; expected matches actual is " + Arrays.deepToString(testArr3).equals(arrToString(testArr3)));
@@ -25,6 +26,7 @@ public class ArrayDemo{
 	System.out.println("HtmlTest: expected matches returned is " + "<table><tr><td>10</td><td>15</td><td>20</td></tr><tr><td>2</td><td>3</td><td>4</td></tr></table>".equals(htmlTable(testArr3)));
 	System.out.println("HtmlTest: expected matches returned is " + "<table><tr></tr></table>".equals(htmlTable(testArr4)));
 	System.out.println("HtmlTest: expected matches returned is " + "<table><tr><td>1</td></tr><tr><td>2</td></tr><tr><td>3</td></tr></table>".equals(htmlTable(htmlTest2)));
+	System.out.println("HtmlTest: expected matches returned is " + "<table><tr></tr><tr></tr><tr></tr></table>".equals(htmlTable(htmlTest3)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
