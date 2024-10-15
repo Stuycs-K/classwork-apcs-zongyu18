@@ -5,7 +5,7 @@ public class Demo{
   to the others.
   */
   public static double distance(Point a, Point b){
-    return (Math.pow(Math.pow(a, 2) + Math.pow(b, 2)), 0.5);
+    return Math.pow((Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2)), 0.5);
   }
 
   public static void main(String[]args){
