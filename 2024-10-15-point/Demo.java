@@ -16,6 +16,8 @@ public class Demo{
     Point origin = new Point(0, 0);
 	Point p5 = new Point(5, 12);
 	Point p6 = new Point(p5);
+	Point p7 = new Point(0.1, 1.1);
+	Point p8 = new Point(1.1, 2.1);
 	// Test for Point(Point other)
     System.out.println("Original point is " + p3);
     System.out.println("Point returned from Point(Point other) is " + p4);
@@ -26,15 +28,18 @@ public class Demo{
 	System.out.println("The distance between " + p3 + " and " + origin +" according to distance is " + distance(p3, origin));
 	System.out.println("The distance between " + p5 + " and " + origin + " according to distance is " + distance(p5, origin));
 	System.out.println("The distance between " + p5 + " and " + p5 + " according to distance is " + distance(p5, p5));
+	System.out.println("The distance between " + p7 + " and " + p8 + " according to distance is " + distance(p7, p8));
 	// Tests for distanceTo(Point other)
     System.out.println("The distance between " + p1 + " and " + p2 + " according to distanceTo is " + p1.distanceTo(p2));
 	System.out.println("The distance between " + p3 + " and " + origin + " according to distanceTo is " + p3.distanceTo(origin));
 	System.out.println("The distance between " + p5 + " and " + origin + " according to distanceTo is " + p5.distanceTo(origin));
 	System.out.println("The distance between " + p5 + " and " + p5 + " according to distanceTo is " + p5.distanceTo(p5));
+	System.out.println("The distance between " + p7 + " and " + p8 + " according to distanceTo is " + p7.distanceTo(p8));
 	// Tests for Point.distance(Point a, Point b)
     System.out.println("The distance between " + p1 + " and " + p2 + " according to Point.distance is " + Point.distance(p1,p2));
 	System.out.println("The distance between " + p3 + " and " + origin + " according to Point.distance is " + Point.distance(p3,origin));
 	System.out.println("The distance between " + p5 + " and " + origin + " according to Point.distance is " + Point.distance(p5,origin));
 	System.out.println("The distance between " + p5 + " and " + p5 + " according to Point.distance is " + Point.distance(p5,p5));
+	System.out.println("The distance between " + p7 + " and " + p8 + " according to Point.distance is " + Point.distance(p7,p8));
   }
 }
