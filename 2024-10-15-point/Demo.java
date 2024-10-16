@@ -25,12 +25,16 @@ public class Demo{
     System.out.println("The distance between " + p1 + " and " + p2 + " according to distance is " + distance(p1,p2));
 	System.out.println("The distance between " + p3 + " and " + origin +" according to distance is " + distance(p3, origin));
 	System.out.println("The distance between " + p5 + " and " + origin + " according to distance is " + distance(p5, origin));
+	System.out.println("The distance between " + p5 + " and " + p5 + " according to distance is " + distance(p5, p5));
 	// Tests for distanceTo(Point other)
-    System.out.println("The distance between " + p3 + " and " + origin + " according to distanceTo is " + p3.distanceTo(origin));
     System.out.println("The distance between " + p1 + " and " + p2 + " according to distanceTo is " + p1.distanceTo(p2));
+	System.out.println("The distance between " + p3 + " and " + origin + " according to distanceTo is " + p3.distanceTo(origin));
 	System.out.println("The distance between " + p5 + " and " + origin + " according to distanceTo is " + p5.distanceTo(origin));
+	System.out.println("The distance between " + p5 + " and " + p5 + " according to distanceTo is " + p5.distanceTo(p5));
 	// Tests for Point.distance(Point a, Point b)
     System.out.println("The distance between " + p1 + " and " + p2 + " according to Point.distance is " + Point.distance(p1,p2));
+	System.out.println("The distance between " + p3 + " and " + origin + " according to Point.distance is " + Point.distance(p3,origin));
 	System.out.println("The distance between " + p5 + " and " + origin + " according to Point.distance is " + Point.distance(p5,origin));
+	System.out.println("The distance between " + p5 + " and " + p5 + " according to Point.distance is " + Point.distance(p5,p5));
   }
 }
