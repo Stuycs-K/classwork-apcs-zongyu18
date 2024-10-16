@@ -18,6 +18,9 @@ public class Demo{
 	Point p6 = new Point(p5);
 	Point p7 = new Point(0.1, 1.1);
 	Point p8 = new Point(1.1, 2.1);
+	Point equilTri1 = new Point(-0.5, 0);
+	Point equilTri2 = new Point(0.5,0);
+	Point equilTri3 = new Point(0, 0.5 * Math.sqrt(3));
 	// Test for Point(Point other)
     System.out.println("Original point is " + p3);
     System.out.println("Point returned from Point(Point other) is " + p4);
@@ -41,5 +44,7 @@ public class Demo{
 	System.out.println("The distance between " + p5 + " and " + origin + " according to Point.distance is " + Point.distance(p5,origin));
 	System.out.println("The distance between " + p5 + " and " + p5 + " according to Point.distance is " + Point.distance(p5,p5));
 	System.out.println("The distance between " + p7 + " and " + p8 + " according to Point.distance is " + Point.distance(p7,p8));
+	// Test for the equilateral triangle
+	System.out.println("The three side lengths of the triangle are " + distance(equilTri1, equilTri2) + ", " + distance(equilTri2, equilTri3) + ", " + distance(equilTri3, equilTri1));
   }
 }
