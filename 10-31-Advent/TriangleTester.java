@@ -1,20 +1,24 @@
-import java.util.Scanner;
-import java.io.File;
+import java.io.*;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 
 public class TriangleTester {
 
-  public static boolean helper(String input) {
-    Scanner sc = new Scanner(input);
-    int[] ary = new int[3];
-    int count = 3;
-    for (int i = 0; i < count; i++) {
-      ary[i] = sc.nextInt(); 
+  public static boolean helper(String input){
+	File temp = new File(input);
+    Scanner file = new Scanner(temp);
+    String[] lengths = new String[3];
+    for (int count = 0; count < 3; count++) {
+      lengths[count] = file.next(); 
     }
-    return (ary[0] + ary[1] <= ary[2] || ary[0] + ary[2] <= ary[1] || ary[1] + ary[2] <= ary[0] );
+	file.close();
+	return true;
+  //  return (lengths[0] + lengths[1] <= lengths[2] || lengths[0] + lengths[2] <= lengths[1] || lengths[1] + lengths[2] <= lengths[0] );
+  
   }
 
-  public static int countTrianglesA(String filename) {
+  public static int countTrianglesA(String filename){
     Scanner sc = new Scanner(filename);
     int counter = 0;
     while(sc.hasNextLine()) {
