@@ -54,24 +54,25 @@ public class TriangleTester {
 	File file = new File("inputTri.txt");//1
     Scanner input = new Scanner(file);
 	String lengthSet;
-	String[] lengthTempArray = new String[3];
-	String[][] lengthArray = new String[3][3];
+	String[] lengthArray = new String[3];
+	String[][] lengthArrayDouble = new String[3][3];
 	while (input.hasNextLine()){
 		for (int count = 0; count < 3; count++){
 			lengthSet = input.nextLine();
-			lengthTempArray = lengthSet.split(" ");
-			for (int innerCount = 0; count < 3 ; count++){
-				lengthArray[count][innerCount] = lengthTempArray[innerCount];
+			lengthArray = lengthSet.split(" ");
+			for (int innerCount = 0; innerCount < 3; innerCount++){
+				lengthArrayDouble[innerCount][count] = lengthArray[innerCount];
 			}
 		}
-		for (int count = 0; count < 3; count++){
-			if (helper(Integer.parseInt(lengthArray[count][0]), Integer.parseInt(lengthArray[count][1]), Integer.parseInt(lengthArray[count][2]))){
+		for (int testCount = 0; testCount < 3; testCount++){
+			if (helper(Integer.parseInt(lengthArrayDouble[testCount][0]), Integer.parseInt(lengthArrayDouble[testCount][1]), Integer.parseInt(lengthArrayDouble[testCount][2]))){
 				counter++;
-			} 
+			}   
 		}
 	}
     return counter;
+	}
   }
-}
+
 
 
