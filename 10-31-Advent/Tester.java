@@ -26,6 +26,7 @@ public class Tester{
 		}
 		System.out.println(counter + " helper tests passed out of 5 total");
 		System.out.println(TriangleTester.countTrianglesA("input.txt"));
+		System.out.println(TriangleTester.countTrianglesB("input.txt"));
 		
 	}
 }
