@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class TriangleTester {
-
+	
   public static boolean helper(int lengthA, int lengthB, int lengthC){
 	return !(lengthA + lengthB <= lengthC || lengthB + lengthC <= lengthA || lengthA + lengthC <= lengthB);
   }
@@ -25,14 +25,14 @@ public class TriangleTester {
     }
 	File file = new File("inputTri.txt");//1
     Scanner input = new Scanner(file);
-	String lengthSet;
-	String[] lengthArray = new String[3];
+	int[] lengthArray = new int[3];
 	while (input.hasNextLine()){
-		lengthSet = input.nextLine();
-		lengthArray = lengthSet.split(" ");
-		if (helper(Integer.parseInt(lengthArray[0]), Integer.parseInt(lengthArray[1]), Integer.parseInt(lengthArray[2]))){
+		for (int count = 0; count < 3; count++){
+			lengthArray[count] = input.nextInt();
+		}
+		if (helper(lengthArray[0], lengthArray[1], lengthArray[2])){
 			counter++;
-		} 
+		}
 	}
     return counter;
   }
