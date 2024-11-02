@@ -36,6 +36,42 @@ public class TriangleTester {
 	}
     return counter;
   }
+  
+  public static int countTrianglesB(String filename) throws FileNotFoundException
+  {
+	int counter = 0;
+    //2 Opening a file requires a try/catch
+    try {
+      File file = new File("inputTri.txt");//1
+      Scanner input = new Scanner(file);
+      //CODE THAT SCANS THE FILE.
+      input.close();//releases the file from your program
+
+    } catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+    }
+	File file = new File("inputTri.txt");//1
+    Scanner input = new Scanner(file);
+	String lengthSet;
+	String[] lengthTempArray = new String[3];
+	String[][] lengthArray = new String[3][3];
+	while (input.hasNextLine()){
+		for (int count = 0; count < 3; count++){
+			lengthSet = input.nextLine();
+			lengthTempArray = lengthSet.split(" ");
+			for (int innerCount = 0; count < 3 ; count++){
+				lengthArray[count][innerCount] = lengthTempArray[innerCount];
+			}
+		}
+		for (int count = 0; count < 3; count++){
+			if (helper(Integer.parseInt(lengthArray[count][0]), Integer.parseInt(lengthArray[count][1]), Integer.parseInt(lengthArray[count][2]))){
+				counter++;
+			} 
+		}
+	}
+    return counter;
+  }
 }
 
 
