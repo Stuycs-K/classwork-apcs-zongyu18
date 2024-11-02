@@ -4,23 +4,26 @@ import java.util.Scanner;
 
 public class Tester{
 	public static void main(String[] args){
-	
-//2 Opening a file requires a try/catch
-    try {
-      File file = new File("PUT_FILENAME_HERE");//1
-      Scanner input = new Scanner(file);
-      //CODE THAT SCANS THE FILE.
-      input.close();//releases the file from your program
-
-    }/* catch (FileNotFoundException ex) {
-      //File not found what should you do?
-      System.out.println("File not found");
-      return; //you can return from a void function just don't put a value.
-    } */catch (IOException ex){
-		System.out.println("Error");
-		return;
-	}System.out.println(TriangleTester.helper("inputTri.txt"));
-  }
+		// Helper Tests
+		int counter = 0;
+		if (!TriangleTester.helper(5, 10, 25)){
+			counter++;
+		}
+		if (!TriangleTester.helper(5, 100, 5)){
+			counter++;
+		}
+		if (TriangleTester.helper(5, 5, 2)){
+			counter++;
+		}
+		if (!TriangleTester.helper(1, 2, 3)){
+			counter++;
+		}
+		if (TriangleTester.helper(3, 2, 3)){
+			counter++;
+		}
+		System.out.println(counter + " helper tests passed out of 5 total");
+		
 		
 	}
+}
 
