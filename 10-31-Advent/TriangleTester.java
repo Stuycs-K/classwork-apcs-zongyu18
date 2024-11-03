@@ -9,20 +9,12 @@ public class TriangleTester {
 	return !(lengthA + lengthB <= lengthC || lengthB + lengthC <= lengthA || lengthA + lengthC <= lengthB);
   }
 
-  public static int countTrianglesA(String filename) throws FileNotFoundException
+  public static int countTrianglesA(String filename) 
   {
 	int counter = 0;
     //2 Opening a file requires a try/catch
     try {
-      File file = new File("inputTri.txt");//1
-      Scanner input = new Scanner(file);
-      //CODE THAT SCANS THE FILE.
-      input.close();//releases the file from your program
 
-    } catch (FileNotFoundException ex) {
-      //File not found what should you do?
-      System.out.println("File not found");
-    }
 	File file = new File("inputTri.txt");//1
     Scanner input = new Scanner(file);
 	int[] lengthArray = new int[3];
@@ -34,24 +26,23 @@ public class TriangleTester {
 			counter++;
 		}
 	}
+	      input.close();//releases the file from your program
+
     return counter;
+    } catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+	  return 0;
+    }
+	
   }
   
-  public static int countTrianglesB(String filename) throws FileNotFoundException
+  public static int countTrianglesB(String filename) 
   {
 	int counter = 0;
     //2 Opening a file requires a try/catch
     try {
       File file = new File("inputTri.txt");//1
-      Scanner input = new Scanner(file);
-      //CODE THAT SCANS THE FILE.
-      input.close();//releases the file from your program
-
-    } catch (FileNotFoundException ex) {
-      //File not found what should you do?
-      System.out.println("File not found");
-    }
-	File file = new File("inputTri.txt");//1
     Scanner input = new Scanner(file);
 	int[] lengthArray = new int[3];
 	int[][] lengthArrayDouble = new int[3][3];
@@ -69,8 +60,16 @@ public class TriangleTester {
 				counter++;
 			}   
 		}
-	}
+	}      input.close();//releases the file from your program
+	
     return counter;
+
+    } catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+	  return 0;
+    }
+	
 	}
   }
 
