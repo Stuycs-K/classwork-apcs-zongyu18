@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Tester{
-	public static void main(String[] args) throws FileNotFoundException
+	public static void main(String[] args)
 	{
 		//2 Opening a file requires a try/catch
 
@@ -27,7 +27,6 @@ public class Tester{
 		System.out.println(counter + " helper tests passed out of 5 total");
 		System.out.println(TriangleTester.countTrianglesA("input.txt"));
 		System.out.println(TriangleTester.countTrianglesB("input.txt"));
-		
+
 	}
 }
-
