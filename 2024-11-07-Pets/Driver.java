@@ -1,3 +1,5 @@
+// speak() is overridden in the child class but not the parent, same with getName()
+//Therefore, the String "The Mighty"  is added before the original getName() method
 public class Driver{
   public static void main(String[] args) {
     Animal dog = new Animal("woof", 1, "Bob");
