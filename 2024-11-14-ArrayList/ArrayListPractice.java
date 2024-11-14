@@ -29,6 +29,29 @@ public static ArrayList<String> makeReversedList( ArrayList<String> original){
   }
   return ans;
 }
+public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+  //return a new ArrayList that has all values of a and b in alternating order that is:
+  //a[0], b[0], a[1], b[1]...
+  //If one list is longer than the other, just attach the remaining values to the end.
+  int smallerSize = Math.min(a.size(), b.size());
+  ArrayList<String> toReturn = new ArrayList<String>(a.size() + b.size());
+  for (int count = 0; count < smallerSize; count++){
+	  toReturn.add(a.get(count));
+	  toReturn.add(b.get(count));
+  }
+  if (a.size() > smallerSize){
+	  for (int count = smallerSize; count < a.size(); count++){
+		  toReturn.add(a.get(count));
+	  }
+  }
+  else if (b.size() > smallerSize){
+	  for (int count = smallerSize; count < b.size(); count++){
+		  toReturn.add(b.get(count));
+	  }
+  }
+  return toReturn;
+  
+} 
 
   public static void main(String args[]) {
 
