@@ -63,17 +63,17 @@ public static ArrayList<String> makeReversedList( ArrayList<String> original){
   public static void main(String args[]) {
 	System.out.println("------------replaceEmpty Tests------------");
     for (int count = 0; count < 10; count++){
-      ArrayList<String> testCase = createRandomArray(10);
-      System.out.println(testCase);
-      replaceEmpty(testCase);
-      System.out.println("" + testCase + "\n");
+      ArrayList<String> replaceTestCase = createRandomArray(10);
+      System.out.println(replaceTestCase);
+      replaceEmpty(replaceTestCase);
+      System.out.println("" + replaceTestCase + "\n");
     }
 
 	System.out.println("------------makeReversedList Tests------------");
 	for (int count = 0; count < 10; count++){
-      ArrayList<String> testCase = createRandomArray(10);
-      System.out.println(testCase);
-      System.out.println(makeReversedList(testCase)+ "\n");
+      ArrayList<String> reversedTestCase = createRandomArray(10);
+      System.out.println(reversedTestCase);
+      System.out.println(makeReversedList(reversedTestCase)+ "\n");
     }
 	
 	System.out.println("------------mixLists Tests------------");
@@ -86,7 +86,9 @@ public static ArrayList<String> makeReversedList( ArrayList<String> original){
 	  System.out.println(mixLists(testCaseB, testCase)+ "\n");
     }
 	
-	
+	ArrayList<String> testCaseLong = createRandomArray(200000);
+	ArrayList<String> testCaseLongB = createRandomArray(200000);
+	System.out.println(mixLists(makeReversedList(testCaseLong), (testCaseLongB)));
   }
 
 
