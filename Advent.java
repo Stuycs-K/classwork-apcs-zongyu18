@@ -22,16 +22,16 @@ public class Advent{
         }
         direction %= 360;
         if (direction == 0){
-          vertical += value.substring(1, value.length() - 1);
+          vertical += Integer.parseInt(value.substring(1, value.length() - 1));
         }
         else if (direction == 90){
-          horizontal += value.substring(1, value.length() - 1);
+          horizontal += Integer.parseInt(value.substring(1, value.length() - 1));
         }
         else if (direction == 180){
-          vertical -= value.substring(1, value.length() - 1);
+          vertical -= Integer.parseInt(value.substring(1, value.length() - 1));
         }
         else{
-          horizontal -= value.substring(1, value.length() - 1);
+          horizontal -= Integer.parseInt(value.substring(1, value.length() - 1));
         }
       }
       return horizontal + vertical;
@@ -40,5 +40,9 @@ public class Advent{
       System.out.println("File not found");
 	     return 0;
     }
+  }
+
+  public static void main(String[] args){
+    System.out.println(dayOne(input.txt));
   }
 }
