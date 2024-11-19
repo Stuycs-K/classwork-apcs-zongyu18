@@ -134,9 +134,42 @@ public class Advent{
 	     return 0;
     }
   }
+  
+  public static String dayTwo(String fileName){
+    try{
+      File file = new File("input.txt");
+      Scanner input = new Scanner(file);
+	  int button = 5;
+	  String output = "";
+	while (input.hasNextLine()){
+        String value = input.nextLine();
+		for (int count = 0; count < value.length(); count++){
+			if (value.substring(count, count + 1).equals("U") && button > 3){
+				button -= 3;
+			}
+			else if (value.substring(count, count+1).equals("L") && (button % 3 != 1)){
+				button -= 1;
+			}
+			else if (value.substring(count, count+1).equals("R") && (button % 3 != 0)){
+				button += 1;
+			}
+			else if (value.substring(count, count+1).equals("D") && (button < 7)){
+				button += 3;
+			}
+		}
+		output += button;
+
+    }
+	return output;
+	}	catch (FileNotFoundException e) {
+      //File not found what should you do?
+      System.out.println("File not found");
+	     return "fail";
+    }
+  }
 
   public static void main(String[] args){
     //System.out.println(dayOne("input.txt"));
-	System.out.println(dayOneB("input.txt"));
+	System.out.println(dayTwo("input.txt"));
   }
 }
