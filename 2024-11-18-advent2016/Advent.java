@@ -167,9 +167,77 @@ public class Advent{
 	     return "fail";
     }
   }
+  
+  public static String dayTwoB(String fileName){
+    try{
+      File file = new File("input.txt");
+      Scanner input = new Scanner(file);
+	  int buttonHorizontal = 3;
+	  int buttonVertical = 1;
+	  String output = "";
+	while (input.hasNextLine()){
+        String value = input.nextLine();
+		for (int count = 0; count < value.length(); count++){
+			if (value.substring(count, count+1).equals("U")){
+				if (buttonVertical != 1 && buttonVertical != 5 && buttonHorizontal != 1 && 
+					!(buttonHorizontal == 2 && (buttonVertical == 2 || buttonVertical == 4))){
+						buttonHorizontal--;
+					}
+			}
+			if (value.substring(count, count+1).equals("D")){
+				if (buttonVertical != 1 && buttonVertical != 5 && buttonHorizontal != 5 && 
+					!(buttonHorizontal == 4 && (buttonVertical == 2 || buttonVertical == 4))){
+						buttonHorizontal++;
+					}
+			}
+			if (value.substring(count, count+1).equals("L")){
+				if (buttonHorizontal != 1 && buttonHorizontal != 5 && buttonVertical != 1 && 
+					!(buttonVertical == 2 && (buttonHorizontal == 2 || buttonHorizontal == 4))){
+						buttonVertical--;
+					}
+			}
+			if (value.substring(count, count+1).equals("R")){
+				if (buttonHorizontal != 1 && buttonHorizontal != 5 && buttonVertical != 5 && 
+					!(buttonVertical == 4 && (buttonHorizontal == 2 || buttonHorizontal == 4))){
+						buttonVertical++;
+					}
+			}
+		}
+		if (buttonHorizontal == 1){
+			output += 1;
+		}
+		else if (buttonHorizontal == 2){
+			output += buttonVertical;
+		}
+		else if (buttonHorizontal == 3){
+			output += (buttonVertical + 4);
+		}
+		else if (buttonHorizontal == 4){
+			if (buttonVertical == 2){
+				output += "A";
+			}
+			else if (buttonVertical == 3){
+				output += "B";
+			}
+			else{
+				output += "C";
+			}
+		}
+		else if (buttonHorizontal == 5){
+			output += "D";
+		}
+
+    }
+	return output;
+	}	catch (FileNotFoundException e) {
+      //File not found what should you do?
+      System.out.println("File not found");
+	     return "fail";
+    }
+  }
 
   public static void main(String[] args){
     //System.out.println(dayOne("input.txt"));
-	System.out.println(dayTwo("input.txt"));
+	System.out.println(dayTwoB("input.txt"));
   }
 }
