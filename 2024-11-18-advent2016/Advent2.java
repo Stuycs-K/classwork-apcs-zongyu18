@@ -89,7 +89,7 @@ public static String daySixB(String fileName){
   }
 }
 
-public static int dayFourHelper(String fileName){
+public static int dayFour(String fileName){
   try{
 	  int toReturnFinal = 0;
     
@@ -137,9 +137,24 @@ public static int dayFourHelper(String fileName){
      return 0;
   }
 }
+public static String cipher(String s, int shift){
+	s = s.toLowerCase();
+	shift = shift % 26;
+	String toReturn = "";
+	for (int count = 0; count < s.length(); count++){
+		toReturn += ("" + (char)((s.charAt(count) - 97 + shift) % 27 + 97));
+	}
+	return toReturn;
+}
+/*
+public static int dayFourB(String fileName){
+  try{
+	  int toReturnFinal = 0;
+    File file = new File("input.txt");
+    Scanner input = new Scanner(file);*/
 
 
   public static void main(String[] args){
-    System.out.println(dayFourHelper("input.txt"));
+    System.out.println(cipher("hi", 1));
   }
 }
