@@ -142,19 +142,34 @@ public static String cipher(String s, int shift){
 	shift = shift % 26;
 	String toReturn = "";
 	for (int count = 0; count < s.length(); count++){
-		toReturn += ("" + (char)((s.charAt(count) - 97 + shift) % 27 + 97));
+		toReturn += ("" + (char)((s.charAt(count) - 97 + shift) % 26 + 97));
 	}
 	return toReturn;
 }
-/*
-public static int dayFourB(String fileName){
+
+public static void dayFourB(String fileName){
   try{
-	  int toReturnFinal = 0;
+	  
     File file = new File("input.txt");
-    Scanner input = new Scanner(file);*/
+    Scanner input = new Scanner(file);
+	while (input.hasNextLine()){
+		String checker = "";
+		String line = input.nextLine();
+		String[] lineArray = line.split("-");
+		int shift = Integer.parseInt(lineArray[lineArray.length - 1].substring(0,3));
+		for (int count = 0; count < lineArray.length - 1; count++){
+			checker += cipher(lineArray[count], shift) + " ";
+		}
+		System.out.println(checker + ", " + shift);
+	}
+  }catch(FileNotFoundException e) {
+    //File not found what should you do?
+    System.out.println("File not found");
+  }
+}
 
 
   public static void main(String[] args){
-    System.out.println(cipher("hi", 1));
+    dayFourB("input.txt");
   }
 }
