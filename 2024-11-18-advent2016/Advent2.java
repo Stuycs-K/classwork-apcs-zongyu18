@@ -89,16 +89,18 @@ public static String daySixB(String fileName){
   }
 }
 
-public static String dayFourHelper(String fileName){
+public static int dayFourHelper(String fileName){
   try{
-    String toReturn = "";
-	int toReturnHelp = 0;
-	String trackerString = "";
+	  int toReturnFinal = 0;
+    
+	
     File file = new File("input.txt");
     Scanner input = new Scanner(file);
-    int[] alphabet = new int[26];
-	int tracker = 0;
+    
+	
     while (input.hasNextLine()){
+		int[] alphabet = new int[26];
+		String trackerString = "";
       String line = input.nextLine();
       String[] lineArray = line.split("-");
 	  for (int count = 0; count < lineArray.length - 1; count++){
@@ -107,31 +109,36 @@ public static String dayFourHelper(String fileName){
 			  alphabet[currString.charAt(innerCount) - 97] += 1;
 		  }
 	  }
-    }
+    String toReturn = "";
 	for (int firstCount = 0; firstCount < 5; firstCount++){
-		for (int count = 0; count < 26; count++){
-			toReturnHelp = 0;
-		  if (alphabet[count] > toReturnHelp && !trackerString.contains("" + count)){
+		int toReturnHelp = 0;
+		int tracker = 0;
+		for (int count = 25; count >= 0; count--){
+			
+		  if (alphabet[count] >= toReturnHelp && !toReturn.contains("" + (char)(97+ count))){
 			toReturnHelp = alphabet[count];
 			tracker = count;
 		  }
 		}
-		trackerString += tracker;
 		toReturn += (char)(tracker+97);
 	}
-	String toReturnReal = "";
-	for (int count = toReturn.length() - 1; count >= 0; count--){
-		toReturnReal += toReturn.charAt(count);
+	
+	String keyValue = lineArray[lineArray.length - 1];
+	
+	if (keyValue.substring(4,9).equals(toReturn)){
+		toReturnFinal += Integer.parseInt(keyValue.substring(0,3));
 	}
-	return toReturnReal;
+  }
+  return toReturnFinal;
   }
   catch (FileNotFoundException e) {
     //File not found what should you do?
     System.out.println("File not found");
-     return "fail";
+     return 0;
   }
 }
-	
+
+
   public static void main(String[] args){
     System.out.println(dayFourHelper("input.txt"));
   }
