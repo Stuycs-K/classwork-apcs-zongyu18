@@ -75,7 +75,7 @@ public class AdventExtra{
 				  for (int innerCount = 0; innerCount <= checker.length() - 3; innerCount++){
 					  if (checker.substring(innerCount, innerCount + 3).equals(reverse(checker.substring(innerCount, innerCount+3))) 
 			&& !checker.substring(innerCount, innerCount+1).equals(checker.substring(innerCount+1,innerCount+2))){
-						  brackets += checker.substring(innerCount, innerCount+3) + " ";
+						  brackets += checker.substring(innerCount, innerCount+3) + ",";
 					  }
 				  }
 				  checker = "";
@@ -91,20 +91,34 @@ public class AdventExtra{
 			  }
 		  }
 	  }
-	  truthValue = false;
-	for (int count = 0; count < toRead.length() - 3; count++){
-	
-		if (truthValue && toRead.substring(count, count + 3).equals(reverse(toRead.substring(count, count+3))) 
-			&& !toRead.substring(count, count+1).equals(toRead.substring(count+1,count+2))){
-			outsideBrackets += toRead.charAt(count + 1) + toRead.charAt(count) + toRead.charAt(count+1) + " ";
-		}
-		
+	  if (brackets.length() == 0){
+		  return false;
+	  }
+	  truthValue = true;
+	  outsideBrackets = "";
+	for (int count = 0; count <= toRead.length() - 3; count++){
+	if (toRead.substring(count, count + 1).equals("[")){
+		truthValue = false;
 	}
-     for (int count = 0; count < outsideBrackets.length(); count += 4){
-		 if (brackets.contains(outsideBrackets.substring(count, count +4))){
+	if (toRead.substring(count, count+1).equals("]")){
+		truthValue = true;
+		count++;
+	}
+	if (truthValue){
+		if (toRead.substring(count, count + 3).equals(reverse(toRead.substring(count, count+3))) 
+			&& !toRead.substring(count, count+1).equals(toRead.substring(count+1,count+2))){
+			outsideBrackets += toRead.substring(count +1, count+2) + toRead.substring(count,count+1) +toRead.substring(count+1,count+2) + ",";
+		}
+	}
+	}
+	System.out.println(outsideBrackets);
+	System.out.println(brackets);
+     for (int count = 0; count <= brackets.length() - 4; count += 4){
+		 if (outsideBrackets.contains(brackets.substring(count, count +4))){
 			 return true;
 		 }
 	 }
+	 
 	 return false;
     
   }
