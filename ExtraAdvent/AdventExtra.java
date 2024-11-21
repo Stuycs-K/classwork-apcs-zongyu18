@@ -8,23 +8,66 @@ public class AdventExtra{
     for (int count = s.length() - 1; count >= 0; count--){
       toReturn += s.charAt(count);
     }
+	return toReturn;
   }
   public static boolean daySevenHelper(String toRead){
-  String[] toReadList = toRead.split("[");
-  String[] toReadList2 = toReadList[1].split("]");
-  String[] toReadListFinal = new String[]{toReadList[0], toReadList2[0], toReadList2[1]};
-  for (int count = 0; count <= toReadList2[0].length() - 4; count++){
-    if (toReadList2[0].substring(count, count + 4).equals(reverse(toReadList2[0].substring(count, count + 4)))){
+	  boolean truthValue = false;
+	  String checker = "";
+	  for (int count = 0; count < toRead.length(); count++){
+		  if (truthValue){
+			  if (toRead.substring(count, count + 1).equals("]")){
+				  for (int innerCount = 0; innerCount <= checker.length() - 4; innerCount++){
+					  if (checker.substring(innerCount, innerCount + 4).equals(reverse(checker.substring(innerCount, innerCount+4))) 
+			&& !checker.substring(innerCount, innerCount+1).equals(checker.substring(innerCount+1,innerCount+2))){
+						  return false;
+					  }
+				  }
+				  checker = "";
+				  truthValue = false;
+			  }
+			  else{
+				  checker += toRead.substring(count, count + 1);
+			  }
+		  }
+		  else{
+			  if (toRead.substring(count, count + 1).equals("[")){
+				  truthValue = true;
+			  }
+		  }
+	  }
+	  
+	for (int count = 0; count <= toRead.length() - 4; count++){
+		if (toRead.substring(count, count + 4).equals(reverse(toRead.substring(count, count+4))) 
+			&& !toRead.substring(count, count+1).equals(toRead.substring(count+1,count+2))){
+				return true;
+			}
+	}
       return false;
-    }
+    
   }
-  for (int count = 0; count <= toReadList[0].length() - 4; count++){
-    if (toReadList[0].substring(count, count + 4).equals(reverse(toReadList[0].substring(count, count + 4))) &&
-      !toReadList[0].substring(count, count + 2).equals(reverse(toReadList[0].substring(count, count + 2)))){
-        return true;
-      }
-    }
-      return false;
-    }
+  
+  public static int daySeven(String filename){
+	  try{
+		  int toReturn = 0;
+		  File file = new File("input.txt");
+		  Scanner input = new Scanner(file);
+		  while (input.hasNextLine()){
+			  if (daySevenHelper(input.nextLine())){
+				  toReturn++;
+			  }
+		  }
+		  return toReturn;
+	  }catch (FileNotFoundException e) {
+    //File not found what should you do?
+    System.out.println("File not found");
+     return 10;
+  }
+  }
+  
+  public static void main(String[] args){
+	  System.out.println(daySeven("input.txt"));
   }
 }
+  
+  
+
