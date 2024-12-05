@@ -55,11 +55,45 @@ public class Driver extends Text{
     }
   }
 
+  public static void smiley(){
+    go(10, 32);
+    color(YELLOW, background(YELLOW));
+    System.out.print("-");
+    System.out.print(RESET);
+    go(10, 48);
+    color(YELLOW, background(YELLOW));
+    System.out.print("-");
+    System.out.print(RESET);
+    for (int count = 32; count < 49; count++){
+      go(17, count);
+      color(YELLOW, background(YELLOW));
+      System.out.print("-");
+      System.out.print(RESET);
+    }
+    go(16, 31);
+    color(YELLOW, background(YELLOW));
+    System.out.print("-");
+    System.out.print(RESET);
+    go(16, 49);
+    color(YELLOW, background(YELLOW));
+    System.out.print("-");
+    System.out.print(RESET);
+    go(15, 30);
+    color(YELLOW, background(YELLOW));
+    System.out.print("-");
+    System.out.print(RESET);
+    go(15, 50);
+    color(YELLOW, background(YELLOW));
+    System.out.print("-");
+    System.out.print(RESET);
+  }
+
   public static void main(String[] args){
     System.out.println(CLEAR_SCREEN);
     partFive();
     partSixToEight();
     partNine();
+    smiley();
     go(30, 1);
   }
 }
