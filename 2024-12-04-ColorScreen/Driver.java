@@ -46,9 +46,20 @@ public class Driver extends Text{
     }
   }
 
+  public static void partNine(){
+    for (int count = 2; count < 80; count += 2){
+      go(3, count);
+      color(BLUE, background(BLACK));
+      System.out.print("-");
+      System.out.print(RESET);
+    }
+  }
+
   public static void main(String[] args){
     System.out.println(CLEAR_SCREEN);
     partFive();
     partSixToEight();
+    partNine();
+    go(30, 1);
   }
 }
