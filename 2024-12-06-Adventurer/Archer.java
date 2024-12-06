@@ -22,4 +22,17 @@ public class Archer extends Adventurer{
   public int getSpecialMax(){
     return 25;
   }
+  public String attack (Adventurer other){
+    return "You have dealt 1 DMG!";
+  }
+  public String support(Adventurer other){
+    return "You have healed 1 HP!";
+  }
+  public String support(){
+    return "You have health yourself for 1 HP!";
+  }
+  public String specialAttack(Adventurer other){
+    this.setSpecial(this.getSpecial() - 1);
+    return("You have shot an arrow dealing 2 DMG!");
+  }
 }
