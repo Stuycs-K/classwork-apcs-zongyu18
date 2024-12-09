@@ -1,13 +1,16 @@
 public class Archer extends Adventurer{
+  private int specialCount;
   public Archer(String name){
-    this.super(name, 10);
+    super(name, 10);
+    this.setSpecial(25);
+    this.setmaxHP(15);
   }
   public Archer(String name, int hp){
-    super.setName(name);
-    super.setHP(hp);
-    super.setmaxHP(hp);
+    super(name, hp);
     this.setSpecial(25);
+    this.setmaxHP(15);
   }
+
   public String getSpecialName(){
     return "Arrows";
   }
@@ -29,7 +32,7 @@ public class Archer extends Adventurer{
   }
   public String support(Adventurer other){
     other.setHP(other.getHP() + 1);
-    return "You have healed " + other.getName() " for 1 HP!";
+    return "You have healed " + other.getName() + " for 1 HP!";
   }
   public String support(){
     this.setHP(this.getHP() + 1);
