@@ -3,9 +3,10 @@ public class Archer extends Adventurer{
     this.super(name, 10);
   }
   public Archer(String name, int hp){
-    this.name = name;
-    this.HP = hp;
-    this.maxHP = hp;
+    super.setName(name);
+    super.setHP(hp);
+    super.setmaxHP(hp);
+    this.setSpecial(25);
   }
   public String getSpecialName(){
     return "Arrows";
@@ -23,20 +24,20 @@ public class Archer extends Adventurer{
     return 25;
   }
   public String attack (Adventurer other){
-    other.setSpecial(other.getSpecial() - 1);
-    return "You have dealt 1 DMG!";
+    other.applyDamage(1);
+    return "You have dealt 1 DMG to " + other.getName() + "!";
   }
   public String support(Adventurer other){
     other.setHP(other.getHP() + 1);
-    return "You have healed 1 HP!";
+    return "You have healed " + other.getName() " for 1 HP!";
   }
   public String support(){
-    this.setHP(other.getHP() + 1);
-    return "You have health yourself for 1 HP!";
+    this.setHP(this.getHP() + 1);
+    return "You have healed yourself for 1 HP!";
   }
   public String specialAttack(Adventurer other){
     this.setSpecial(this.getSpecial() - 1);
-    other.setHP(other.getHP() - 2);
-    return("You have shot an arrow dealing 2 DMG!");
+    other.applyDamage(2);
+    return("You have shot an arrow at " + other.getName() + " dealing 2 DMG!");
   }
 }
