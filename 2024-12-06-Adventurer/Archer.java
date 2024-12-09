@@ -28,19 +28,20 @@ public class Archer extends Adventurer{
   }
   public String attack (Adventurer other){
     other.applyDamage(1);
-    return "You have dealt 1 DMG to " + other.getName() + "!";
+    return this.getName() + " has dealt 1 DMG to " + other.getName() + "!";
   }
   public String support(Adventurer other){
     other.setHP(other.getHP() + 1);
-    return "You have healed " + other.getName() + " for 1 HP!";
+    return this.getName() + " has healed " + other.getName() + " for 1 HP!";
   }
   public String support(){
     this.setHP(this.getHP() + 1);
-    return "You have healed yourself for 1 HP!";
+    return this.getName() + " has healed themself for 1 HP!";
   }
   public String specialAttack(Adventurer other){
     this.setSpecial(this.getSpecial() - 1);
     other.applyDamage(2);
-    return("You have shot an arrow at " + other.getName() + " dealing 2 DMG!");
+    return(this.getName() + " has shot an arrow at " + other.getName() + " dealing 2 DMG!");
   }
+  
 }
