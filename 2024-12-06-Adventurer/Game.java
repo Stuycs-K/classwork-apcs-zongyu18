@@ -1,7 +1,7 @@
 public class Game{
-  public static void helper(){
+  public static boolean helper(){
     System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-    response = userInput.nextLine();
+    String response = userInput.nextLine();
     response.toLowerCase();
     if (response.equals("a") || response.equals("attack")){
       player.attack(enemy);
@@ -13,11 +13,12 @@ public class Game{
       player.support()
     }
     else if (response.equals("quit")){
-      return;
+      return false;
     }
     else{
       helper();
     }
+    return true;
   }
   public static void main(String[] args){
     Scanner userInput = new Scanner(System.in);
@@ -25,13 +26,25 @@ public class Game{
     String response = userInput.nextLine();
     Adventurer player = new Archer(username, 15);
     Adventurer enemy = new CodeWarrior("Syntax Error", 8);
-    while (!response.equals("quit")){
+    boolean toContinue = true;
+    while (helper()){
       System.out.println(player.getName() + " / " + player.getHP() + " / " + player.getSpecial() + " " + player.getSpecialName);
       System.out.println(enemy.getName() + " / " + enemy.getHP() + " / " + enemy.getSpecial() + " " + enemy.getSpecialName);
-      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-      helper();
       if (enemy.getHP() <= 0){
-        System.out.println(player.getName() + "prevails over the defeated " + other.getName() + "!");
+        System.out.println(player.getName() + "prevails over the defeated " + enemy.getName() + "!");
+      }
+      int botChoice = (int) (Math.random() * 3);
+      if (botChoice == 0){
+        enemy.attack(player);
+      }
+      else if (botChoice == 1){
+        enemy.support();
+      }
+      else{
+        enemy.specialAttack(player);
+      }
+      if (player.getHP() <= 0){
+        System.out.println(enemy.getName() + "prevails over the defeated " + player.getName() + "!");
       }
     }
   }
