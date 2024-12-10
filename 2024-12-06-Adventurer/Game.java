@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
 public class Game{
-  public static boolean helper(){
+  public static boolean helper(Adventurer player, Adventurer enemy){
     System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
     Scanner userInput = new Scanner(System.in);
     String response = userInput.nextLine();
     response.toLowerCase();
     if (response.equals("a") || response.equals("attack")){
-      player.attack(enemy);
+      System.out.println(player.attack(enemy));
       return true;
     }
     else if (response.equals("sp") || response.equals("special")){
-      player.specialAttack(enemy);
+      System.out.println(player.specialAttack(enemy));
       return true;
     }
     else if (response.equals("su") || response.equals("support")){
-      player.support();
+      System.out.println(player.support());
       return true;
     }
     else if (response.equals("quit")){
       return false;
     }
     else{
-      helper();
+      helper(player, enemy);
     }
     return true;
   }
@@ -31,30 +31,37 @@ public class Game{
     System.out.println("Enter player name below");
     String response = userInput.nextLine();
     Adventurer player = new Archer(response, 15);
-    Adventurer enemy = new CodeWarrior("Syntax Error", 8);
-    boolean toContinue = true;
+    Adventurer enemy = new CodeWarrior("Syntax Error", 7);
     boolean bothAlive = true;
-    while (helper() && bothAlive){
-      System.out.println(player.getName() + " / " + player.getHP() + " / " + player.getSpecial() + " " + player.getSpecialName());
-      System.out.println(enemy.getName() + " / " + enemy.getHP() + " / " + enemy.getSpecial() + " " + enemy.getSpecialName());
+    while (bothAlive && helper(player, enemy)){
+        System.out.println("");
+        System.out.println(player.getName() + " / " + player.getHP() + "HP / " + player.getSpecial() + " " + player.getSpecialName());
+        System.out.println(enemy.getName() + " / " + enemy.getHP() + "HP / " + enemy.getSpecial() + " " + enemy.getSpecialName());
+        System.out.println("");
       if (enemy.getHP() <= 0){
-        System.out.println(player.getName() + "prevails over the defeated " + enemy.getName() + "!");
-        bothAlive = false;
-      }
-      int botChoice = (int) (Math.random() * 3);
-      if (botChoice == 0){
-        enemy.attack(player);
-      }
-      else if (botChoice == 1){
-        enemy.support();
-      }
-      else{
-        enemy.specialAttack(player);
-      }
-      if (player.getHP() <= 0){
-        System.out.println(enemy.getName() + "prevails over the defeated " + player.getName() + "!");
-        bothAlive = false;
-      }
+          System.out.println(player.getName() + " prevails over the defeated " + enemy.getName() + "!");
+          bothAlive = false;
+        }
+        if (bothAlive){
+          int botChoice = (int) (Math.random() * 3);
+          if (botChoice == 0){
+            System.out.println(enemy.attack(player));
+          }
+          else if (botChoice == 1){
+            System.out.println(enemy.support());
+          }
+          else{
+            System.out.println(enemy.specialAttack(player));
+          }
+          System.out.println("");
+          System.out.println(player.getName() + " / " + player.getHP() + "HP / " + player.getSpecial() + " " + player.getSpecialName());
+          System.out.println(enemy.getName() + " / " + enemy.getHP() + "HP / " + enemy.getSpecial() + " " + enemy.getSpecialName());
+          System.out.println("");
+          if (player.getHP() <= 0){
+            System.out.println(enemy.getName() + " prevails over the defeated " + player.getName() + "!");
+            bothAlive = false;
+          }
+        }
     }
   }
 }
