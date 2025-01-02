@@ -22,6 +22,6 @@ public class Recursion{
     //46 is the largest n such that fib(n) fits in an int
     //System.out.println(fib(47));
 
-    fib(args[0]);
+    fib(Integer.parseInt(args[0])); //46
   }
 }
