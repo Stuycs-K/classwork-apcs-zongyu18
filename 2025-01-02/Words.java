@@ -4,12 +4,13 @@ public class Words{
       System.out.println(result);
     }
     else{
-      for (int count = 0; count < alphabet.length() - 1; count++){
+      for (int count = 0; count < alphabet.length(); count++){
         makeWords(remainingLetters - 1, result + alphabet.charAt(count), alphabet);
       }
     }
   }
   public static void main(String[] args){
-
+    makeWords(2,"","abc");
+    makeWords(3,"","xy");
   }
 }
